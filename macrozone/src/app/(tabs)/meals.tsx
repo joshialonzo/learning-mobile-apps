@@ -5,14 +5,24 @@ import { useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
+/**
+ * Screen that displays all logged meals and provides a "Clear All" action.
+ * The list is refreshed every time the screen comes into focus.
+ */
 export default function AllMealsScreen() {
   const [meals, setMeals] = useState<Meal[]>([]);
 
+  /**
+   * Fetches all meals from storage and updates local state.
+   */
   const loadMeals = async () => {
     const data = await getMeals();
     setMeals(data);
   };
 
+  /**
+   * Deletes all stored meals and reloads the (now empty) list.
+   */
   const handleClearAll = async () => {
     await clearAllMeals();
     loadMeals();

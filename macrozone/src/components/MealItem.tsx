@@ -13,6 +13,17 @@ type MealItemProps = {
   onDelete: () => void;
 };
 
+/**
+ * Renders a single meal row displaying its name and macro breakdown.
+ * Long-pressing the item shows a confirmation dialog to delete the meal.
+ * @param id - Unique identifier of the meal.
+ * @param name - Display name of the meal.
+ * @param calories - Total calories for the meal.
+ * @param protein - Protein content in grams.
+ * @param carbs - Carbohydrate content in grams.
+ * @param fat - Fat content in grams.
+ * @param onDelete - Callback invoked after the meal has been successfully deleted.
+ */
 export default function MealItem({
   id,
   name,
@@ -22,6 +33,11 @@ export default function MealItem({
   fat,
   onDelete,
 }: MealItemProps) {
+  /**
+   * Presents an alert asking the user to confirm deletion of the meal.
+   * On confirmation, deletes the meal from storage, triggers haptic feedback,
+   * and calls `onDelete` to notify the parent.
+   */
   const handleLongPress = () => {
     Alert.alert("Delete Meal", `Are you sure you want to delete "${name}"?`, [
       { text: "Cancel", style: "cancel" },

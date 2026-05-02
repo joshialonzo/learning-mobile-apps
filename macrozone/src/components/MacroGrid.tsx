@@ -6,6 +6,11 @@ type MacroGridProps = {
   meals: Meal[];
 };
 
+/**
+ * Aggregates macro totals from all logged meals and renders them in a 2×2 grid
+ * of {@link MacroCard} components.
+ * @param meals - The list of today's logged meals used to compute totals.
+ */
 export default function MacroGrid({ meals }: MacroGridProps) {
   const totals = meals.reduce(
     (acc, meal) => ({

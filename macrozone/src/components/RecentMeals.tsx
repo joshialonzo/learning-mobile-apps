@@ -7,6 +7,12 @@ type RecentMealsProps = {
   onDelete: () => void;
 };
 
+/**
+ * Renders up to the five most recently logged meals or an empty-state message.
+ * @param meals - The full list of logged meals; only the first five are displayed.
+ * @param onDelete - Callback invoked after a meal has been successfully deleted,
+ *   allowing the parent to refresh its meal list.
+ */
 export default function RecentMeals({ meals, onDelete }: RecentMealsProps) {
   return (
     <View style={{ marginTop: 30 }}>

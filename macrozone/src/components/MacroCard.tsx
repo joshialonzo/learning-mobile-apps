@@ -7,6 +7,14 @@ type MacroCardProps = {
   color: string;
 };
 
+/**
+ * Displays a single macro-nutrient card showing the current value, daily goal,
+ * and a left-side color accent border.
+ * @param label - The nutrient name (e.g. "Calories", "Protein").
+ * @param value - The current consumed amount as a display string.
+ * @param goal - The daily goal as a display string.
+ * @param color - The CSS color used for the left border accent.
+ */
 export default function MacroCard({
   label,
   value,

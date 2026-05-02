@@ -12,6 +12,11 @@ import {
   View,
 } from "react-native";
 
+/**
+ * Screen that provides a form for logging a new meal.
+ * Validates that name and calories are provided before persisting the entry,
+ * then resets the form and navigates back to the Home screen.
+ */
 export default function AddMealScreen() {
   const [name, setName] = useState("");
   const [calories, setCalories] = useState("");
@@ -19,6 +24,10 @@ export default function AddMealScreen() {
   const [carbs, setCarbs] = useState("");
   const [fat, setFat] = useState("");
 
+  /**
+   * Validates the form inputs, saves the new meal to storage, resets the form
+   * fields, triggers haptic feedback, and navigates to the Home tab.
+   */
   const handleAddMeal = async () => {
     if (!name || !calories) {
       Alert.alert("Error", "Please enter a meal name and calories.");

@@ -2,6 +2,11 @@ import { colors } from "@/styles/global";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
+/**
+ * Tab navigation layout for the MacroZone app.
+ * Configures the bottom tab bar styling and registers the Home,
+ * Add Meal, and All Meals tabs with their respective icons.
+ */
 export default function TabLayout() {
   return (
     <Tabs

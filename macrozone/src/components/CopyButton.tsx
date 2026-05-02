@@ -9,7 +9,17 @@ type CopyButtonProps = {
   meals: Meal[];
 };
 
+/**
+ * Renders a button that copies an aggregated daily macro summary to the clipboard
+ * and triggers haptic feedback on success.
+ * @param meals - The list of today's logged meals used to compute totals.
+ */
 export default function CopyButton({ meals }: CopyButtonProps) {
+  /**
+   * Computes the total calories, protein, carbs, and fat across all meals,
+   * copies a formatted summary to the clipboard, triggers haptic feedback,
+   * and shows a confirmation alert.
+   */
   const handleCopy = async () => {
     const totals = meals.reduce(
       (acc, meal) => ({

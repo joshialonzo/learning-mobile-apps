@@ -10,11 +10,19 @@ Notifications.setNotificationHandler({
   }),
 });
 
+/**
+ * Requests the user's permission to display local notifications.
+ * @returns A promise that resolves to `true` if permission was granted, `false` otherwise.
+ */
 export const requestPermissions = async (): Promise<boolean> => {
   const { status } = await Notifications.requestPermissionsAsync();
   return status === "granted";
 };
 
+/**
+ * Cancels any existing scheduled notifications and schedules daily meal reminders
+ * at 12:00 (lunch) and 18:00 (dinner).
+ */
 export const scheduleMealReminders = async () => {
   await Notifications.cancelAllScheduledNotificationsAsync();
 
@@ -43,6 +51,9 @@ export const scheduleMealReminders = async () => {
   });
 };
 
+/**
+ * Cancels all scheduled meal reminder notifications.
+ */
 export const cancelMealReminders = async () => {
   await Notifications.cancelAllScheduledNotificationsAsync();
 };

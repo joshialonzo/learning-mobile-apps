@@ -10,10 +10,17 @@ import {
 
 const REMINDERS_KEY = "remindersEnabled";
 
+/**
+ * A toggle switch that enables or disables daily meal reminder notifications.
+ * The preference is persisted in AsyncStorage so it survives app restarts.
+ */
 export default function ReminderToggle() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    /**
+     * Reads the saved reminder preference from AsyncStorage and updates local state.
+     */
     const load = async () => {
       const val = await AsyncStorage.getItem(REMINDERS_KEY);
       setEnabled(val === "true");
@@ -21,6 +28,12 @@ export default function ReminderToggle() {
     load();
   }, []);
 
+  /**
+   * Handles the switch toggle event.
+   * Requests notification permissions when enabling, schedules or cancels
+   * reminders accordingly, and persists the new state to AsyncStorage.
+   * @param value - `true` to enable reminders, `false` to disable them.
+   */
   const toggle = async (value: boolean) => {
     if (value) {
       const granted = await requestPermissions();

@@ -10,9 +10,17 @@ import { useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 
+/**
+ * Home screen that shows today's macro summary, upcoming meal reminders toggle,
+ * and a list of the most recently logged meals.
+ * Meal data is reloaded each time the screen gains focus.
+ */
 export default function HomeScreen() {
   const [meals, setMeals] = useState<Meal[]>([]);
 
+  /**
+   * Fetches all meals from storage and updates local state.
+   */
   const loadMeals = async () => {
     const data = await getMeals();
     setMeals(data);

@@ -7,7 +7,16 @@ type ShareButtonProps = {
   meals: Meal[];
 };
 
+/**
+ * Renders a share icon button that, when pressed, opens the native share sheet
+ * with an aggregated daily macro summary.
+ * @param meals - The list of today's logged meals used to compute totals.
+ */
 export default function ShareButton({ meals }: ShareButtonProps) {
+  /**
+   * Computes the total calories, protein, carbs, and fat across all meals,
+   * then invokes the native share sheet with a formatted summary string.
+   */
   const handleShare = async () => {
     const totals = meals.reduce(
       (acc, meal) => ({
