@@ -6,6 +6,11 @@ import "@/global.css";
 
 SplashScreen.preventAutoHideAsync().catch(console.warn);
 
+/**
+ * Root navigation layout for the Recurrly app.
+ * Loads custom fonts, prevents the splash screen from hiding until fonts are
+ * ready, and renders a header-less stack navigator.
+ */
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
     "sans-regular": require("@/assets/fonts/PlusJakartaSans-Regular.ttf"),

@@ -4,6 +4,24 @@ import SubscriptionCardProps from "@/type.d";
 import { formatCurrency, formatSubscriptionDateTime } from "@/constants/lib/utils";
 import clsx from "clsx";
 
+/**
+ * Renders a pressable subscription card showing the service name, icon, price,
+ * and billing cycle. When `expanded` is true, additional details such as payment
+ * method, status, and renewal date are revealed.
+ * @param name - Service display name.
+ * @param price - Subscription cost.
+ * @param currency - ISO 4217 currency code for formatting the price.
+ * @param icon - Image source for the service icon.
+ * @param billing - Billing cycle label (e.g. "Monthly", "Yearly").
+ * @param color - Optional background color override for the card.
+ * @param category - Service category shown in the card subtitle.
+ * @param plan - Plan name shown as a fallback subtitle.
+ * @param renewalDate - ISO date string of the next renewal date.
+ * @param onPress - Callback invoked when the card is pressed.
+ * @param expanded - Whether the detailed section is visible.
+ * @param paymentMethod - Payment method description shown when expanded.
+ * @param status - Subscription status shown when expanded.
+ */
 const SubscriptionCard = ({
   name, price,
   currency, icon,

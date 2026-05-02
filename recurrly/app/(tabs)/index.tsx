@@ -16,6 +16,11 @@ import UpcomingSubscriptionCard from "@/components/UpcomingSubscriptionCard";
 
 const SafeAreaView = styled(RNSafeAreaView);
 
+/**
+ * Home screen displaying the user's balance, upcoming subscription renewals,
+ * and a list of all active subscriptions.
+ * Tapping a subscription card toggles its expanded detail view.
+ */
 export default function App() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 

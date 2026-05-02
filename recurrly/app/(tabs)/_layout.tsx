@@ -8,8 +8,19 @@ import clsx from "clsx";
 
 const tabBar = components.tabBar;
 
+/**
+ * Tab navigation layout for the Recurrly app.
+ * Renders a floating bottom tab bar using safe area insets and registers each
+ * tab defined in the {@link tabs} constant.
+ */
 const TabLayout = () => {
     const insets = useSafeAreaInsets();
+    /**
+     * Renders the tab bar icon, applying an active highlight pill when the tab
+     * is focused.
+     * @param focused - Whether this tab is currently selected.
+     * @param icon - The image source to display as the tab icon.
+     */
     const TabIcon = ({ focused, icon}: TabIconProps) => {
         return (
             <View className="tabs-icon">

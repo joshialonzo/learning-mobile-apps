@@ -1,6 +1,9 @@
 import { Text, View } from "react-native";
 import React from "react";
 
+/**
+ * Onboarding screen shown to new users on first launch.
+ */
 const Onboarding = () => {
   return (
     <View className="flex-1 items-center justify-center bg-background">
