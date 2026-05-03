@@ -1,50 +1,40 @@
-# Welcome to your Expo app 👋
+# Recurly
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+`recurrly` is a subscription management prototype built with Expo Router. The app is designed to track recurring payments, upcoming renewals, and subscription status details.
 
-## Get started
+## Documentation entrypoint
 
-1. Install dependencies
+The main documentation content lives in the `docs/` folder.
 
-   ```bash
-   npm install
-   ```
+- [Documentation index](docs/index.md)
+- [Business logic overview](docs/business-logic.md)
 
-2. Start the app
+## Business logic summary
 
-   ```bash
-   npx expo start
-   ```
+The app models subscription tracking using static seed data defined in `constants/data.ts`.
 
-In the output, you'll find options to open the app in a
+Key features include:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Home balance summary with total tracked amount and next renewal date.
+- Upcoming renewals carousel for subscriptions due soon.
+- Active subscription list with expandable cards for more details.
+- Formatting helpers for currency and renewal dates.
+- Placeholder screens for `Subscriptions`, `Insights`, and `Settings`.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project structure
 
-## Get a fresh project
+- `app/` — Expo Router routes and presentation screens.
+- `components/` — reusable UI components such as `SubscriptionCard` and `UpcomingSubscriptionCard`.
+- `constants/` — app data definitions, icons, and formatting utilities.
+- `docs/` — project documentation and business logic details.
 
-When you're ready, run:
+## Getting started
+
+Install dependencies and start the app:
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The app uses Expo and file-based routing with static data for the current implementation.
