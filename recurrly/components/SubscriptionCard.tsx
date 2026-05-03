@@ -32,7 +32,7 @@ const SubscriptionCard = ({
 }: SubscriptionCardProps) => {
   return (
     <Pressable onPress={onPress} className={ clsx("sub-card", "bg-card") }
-      style={color ? { backgroundColor: color } : {}}>
+      style={color ? { backgroundColor: color } : undefined}>
       <View className="sub-head">
         <View className="sub-main">
             <Image source={icon} className="sub-icon" />
